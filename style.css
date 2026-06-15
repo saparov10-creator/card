@@ -1,0 +1,133 @@
+/* 1. Баштапкы жөндөөлөр жана Google Ариби */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Барактын жалпы фону */
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* Башкы заголовок */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-size: 2.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* 2. Карталар жайгашкан сетка (Адаптивдүүлүктүн негизи) */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* 3. Картанын Стили (Glassmorphism & Shadows) */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Курсорду алып баргандагы микро-анимация */
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Картанын үстүнкү сүрөтү же түстүү блогу */
+.card-header {
+    height: 160px;
+    background: linear-gradient(45deg, #ff7b00, #ffae00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.8rem;
+}
+
+/* Ар бир картага уникалдуу градиент берүү */
+.card:nth-child(2) .card-header { background: linear-gradient(45deg, #00b4db, #0083b0); }
+.card:nth-child(3) .card-header { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.card:nth-child(4) .card-header { background: linear-gradient(45deg, #7f00ff, #e100ff); }
+.card:nth-child(5) .card-header { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+.card:nth-child(6) .card-header { background: linear-gradient(45deg, #396afc, #2948ff); }
+.card:nth-child(7) .card-header { background: linear-gradient(45deg, #f857a6, #ff5858); }
+.card:nth-child(8) .card-header { background: linear-gradient(45deg, #0984e3, #74b9ff); }
+
+/* Картанын ички мазмуну */
+.card-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Текст кыска болсо да топчуну ылдыйда тегиз кармайт */
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 12px;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #636e72;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Картанын топчусу (Керемет стиль) */
+.card-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2d3436;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-btn {
+    background-color: #0984e3;
+    box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+}
